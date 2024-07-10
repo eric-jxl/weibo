@@ -14,7 +14,7 @@ RUN set -eux && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
     apt update && apt install -y iptables iproute2 procps vim && pip install -U pip
 
 
-RUN pip install requests lxml flask jinja2 gevent  --no-cache-dir  && apt clean && rm -rf /var/lib/apt/lists/* 
+RUN pip install requests lxml flask jinja2 gevent --user --no-cache-dir  && apt clean && rm -rf /var/lib/apt/lists/* 
 
 COPY ./weibo.py /opt/weibo/
 
