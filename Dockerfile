@@ -11,7 +11,6 @@ ENV TZ=Asia/Shanghai \
 
 
 RUN set -eux && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
-    rm -rf /etc/apt/sources.list.d/debian.sources && touch /etc/apt/sources.list && \ 
     apt update && apt install -y iptables iproute2 procps vim && pip install -U pip
 
 
