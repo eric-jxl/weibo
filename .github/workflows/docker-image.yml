@@ -42,8 +42,9 @@ jobs:
       with:
         context: .
         push: true
-        tags: eric-jxl/weibo:latest
         platforms: linux/amd64,linux/arm64/v8
         build-args: |
           - "VERSION=1.0.0"
+        tags: |
+          ghcr.io/${{ github.actor}}/weibo:latest
 
