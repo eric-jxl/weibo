@@ -52,6 +52,6 @@ jobs:
         build-args: |
           - "VERSION=1.0.0"
         tags: |
-          ghcr.io/${{ github.repository_owner }}/${{ github.repository_name }}:latest
-          ghcr.io/${{ github.repository_owner }}/${{ github.repository_name }}:$(date +%Y%m%d)
+          ghcr.io/${{ github.repository }}:latest
+          ghcr.io/${{ github.repository }}:$(date +%Y%m%d)
 
