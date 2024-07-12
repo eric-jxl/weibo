@@ -44,7 +44,7 @@ jobs:
         echo "Date=$DATE" >> $GITHUB_ENV
 
     - name: 'Build and push with Buildx'
-      uses: docker/build-push-action@v3
+      uses: docker/build-push-action@v4
       with:
         context: .
         push: true
@@ -53,5 +53,5 @@ jobs:
           - "VERSION=1.0.0"
         tags: |
           ghcr.io/${{ github.repository }}:latest
-          ghcr.io/${{ github.repository }}:${{env.Date}}:
+          ghcr.io/${{ github.repository }}:${{env.Date}}
 
