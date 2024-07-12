@@ -1,5 +1,5 @@
 # weibo
-This Weibo Hot List
+The Weibo Hot List
 
 [![Docker Image CI](https://github.com/eric-jxl/weibo/actions/workflows/docker-image.yml/badge.svg)](https://github.com/eric-jxl/weibo/actions/workflows/docker-image.yml)
 ### 针对ghcr.io 打包镜像
