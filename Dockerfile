@@ -1,5 +1,6 @@
 FROM python:3.11.7-slim
 LABEL maintainer="Eric"
+LABEL org.opencontainers.image.source = "https://github.com/eric-jxl/weibo"
 
 USER root
 
