@@ -47,4 +47,5 @@ jobs:
           - "VERSION=1.0.0"
         tags: |
           ghcr.io/${{ github.actor}}/weibo:latest
+          ghcr.io/${{ github.actor}}/weibo:$(date +%Y%m%d)
 
