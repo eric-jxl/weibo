@@ -36,6 +36,12 @@ jobs:
         
     - name: 'Set up Docker Buildx'
       uses: docker/setup-buildx-action@v2
+      
+    - name: Print variables
+      run: |
+        echo "Repository Owner: ${{ github.repository_owner }}"
+        echo "Repository Name: ${{ github.repository }}"
+
 
     - name: 'Build and push with Buildx'
       uses: docker/build-push-action@v3
