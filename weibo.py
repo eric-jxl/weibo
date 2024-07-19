@@ -28,7 +28,6 @@ def parse_html(html) -> list:
     # 获取所有a标签
     tr_list = html.xpath("//div[@id='pl_top_realtimehot']/table/tbody//tr")
     import time
-    # write_to_txt(f'\n\t{time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())}')
     data = []
 
     for tr in tr_list:
@@ -43,16 +42,8 @@ def parse_html(html) -> list:
         text = f"<a class='link-success link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover' href='https://s.weibo.com{href}' target='_blank'>{text}</a>"
 
         strings = "{} {} {} {}".format(index, text, span, hot)
-        # write_to_txt(strings)
         data.append(strings)
-        # print(f"\033[31m{index} \033[32m{text} {span} \033[31m{hot}\033[0m")
-    # print(f"\033[33m{len(tr_list)}条数据写入Weibo.txt成功!\033[0m")
     return data
-
-
-# def write_to_txt(line) -> None:
-#     with open("Weibo.txt", "a+", encoding="utf-8") as f:
-#         f.write(line + '\n')
 
 
 def exit_gracefully(signum, frame):
