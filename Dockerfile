@@ -11,7 +11,7 @@ ENV TZ=Asia/Shanghai \
 
 
 RUN set -eux && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
-    apt update && apt install -y iptables iproute2 procps vim libterm-readline-perl && pip install -U pip --no-cache-dir
+    apt update && apt install -y iptables iproute2 procps vim libterm-readline-perl && pip install -U pip
 
 
 RUN pip install requests lxml flask jinja2 gevent --user --no-cache-dir  && apt clean && rm -rf /var/lib/apt/lists/* 
