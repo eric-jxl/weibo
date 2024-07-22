@@ -57,7 +57,7 @@ def index() -> str:
     template = Template(
         '<link href="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">'
         '<script src="https://cdn.bootcdn.net/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>'
-        "<div class='container table-responsive' style='text-align:center;display:flex;align-items: center;'><table class='table mx-auto'><tbody>{% for line in lines %}<tr class='row text-center'><td class='col-12' style='color:#0180a5'>{{line}}</td></tr><tr>{% endfor %}</tbody></table></div>")
+        "<div class='container table-responsive' style='text-align:center;display:flex;align-items: center;'><table class='table mx-auto table-borderless'><tbody>{% for line in lines %}<tr class='row text-center'><td class='col-12' style='color:#0180a5'>{{line}}</td></tr><tr>{% endfor %}</tbody></table></div>")
     content = parse_html(get_html(url))
     return template.render(lines=content)
 
