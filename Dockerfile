@@ -16,7 +16,7 @@ RUN set -eux && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
 
 RUN pip install -U pip && pip install requests lxml flask jinja2 gevent --user --no-cache-dir  && apt clean && rm -rf /var/lib/apt/lists/* 
 
-COPY ./weibo.py /opt/weibo/
+ADD ./weibo.py /opt/weibo/
 
 WORKDIR /opt/weibo
 
