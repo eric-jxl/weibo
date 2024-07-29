@@ -47,8 +47,9 @@ def parse_html(html) -> list:
 
 
 def exit_gracefully(signum, frame):
+    # 优雅退出
     import sys
-    sys.exit()
+    sys.exit(0)
 
 
 @app.get('/')
