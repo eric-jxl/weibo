@@ -10,7 +10,7 @@ ENV TZ=Asia/Shanghai \
     PYTHONUNBUFFERED=1 
 
 
-RUN set -eux && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
+RUN set -eu && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
     apt update && apt install -y iptables iproute2 procps vim
 
 
