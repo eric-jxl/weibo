@@ -23,9 +23,7 @@ def get_html(url) -> str:
 
 
 def parse_html(html) -> list:
-    # 创建etree对象
     html = etree.HTML(html)
-    # 获取所有a标签
     tr_list = html.xpath("//div[@id='pl_top_realtimehot']/table/tbody//tr")
     import time
     data = []
