@@ -4,6 +4,8 @@ LABEL org.opencontainers.image.source="https://github.com/eric-jxl/weibo"
 
 USER root
 
+WORKDIR /opt/weibo
+
 # 设置环境变量
 ENV TZ=Asia/Shanghai \
     PYTHONDONTWRITEBYTECODE=1 \
@@ -18,7 +20,6 @@ RUN pip install -U pip && pip install requests lxml flask jinja2 gevent --user -
 
 COPY ./weibo.py /opt/weibo/
 
-WORKDIR /opt/weibo
 
 EXPOSE 5000
 ENTRYPOINT ["python","weibo.py"]
