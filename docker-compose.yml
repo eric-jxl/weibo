@@ -9,7 +9,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: weibo
-    restart: always
+    restart: unless-stopped
     ports:
       - 5000:5000
     network_mode: "bridge"
