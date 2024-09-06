@@ -12,8 +12,6 @@ pidfile = "log/gunicorn.pid"
 timeout = 30
 
 loglevel = 'info'
-accesslog = "log/access.log"
-errorlog = "log/debug.log"
 daemon = False
 preload_app = True
 
