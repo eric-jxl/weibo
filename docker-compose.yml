@@ -1,0 +1,15 @@
+version: "2.0"
+
+services:
+  web:
+    image: ghcr.io/eric-jxl/weibo:latest
+    environment:
+      - maintainer="Eric"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: weibo
+    restart: always
+    ports:
+      - 5000:5000
+    network_mode: "bridge"
