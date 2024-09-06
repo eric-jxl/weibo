@@ -18,8 +18,10 @@ RUN set -eu && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
 
 RUN pip install -U pip && pip install requests lxml flask jinja2 gevent --user --no-cache-dir  && apt clean && rm -rf /var/lib/apt/lists/* 
 
-COPY ./weibo.py /opt/weibo/
+COPY weibo.py /opt/weibo/
+COPY config.py /opt/weibo/
+COPY run.sh /opt/weibo/
 
 
 EXPOSE 5000
-ENTRYPOINT ["python","weibo.py"]
+ENTRYPOINT ["./run.sh"]
