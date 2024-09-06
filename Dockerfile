@@ -23,4 +23,5 @@ COPY config.py /opt/weibo/
 COPY run.sh /opt/weibo/
 
 EXPOSE 5000
-ENTRYPOINT ["./run.sh"]
+
+ENTRYPOINT ["gunicorn", "-c", "/opt/weibo/config.py","--access-logfile - --error-logfile -", "weibo:app"]

@@ -8,7 +8,6 @@ gevent.monkey.patch_all()
 
 # debug = True
 bind = "0.0.0.0:5000"
-pidfile = "log/gunicorn.pid"
 timeout = 30
 
 loglevel = 'info'
