@@ -15,13 +15,13 @@ ENV TZ=Asia/Shanghai \
 RUN set -eu && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime && \
     apt update && apt install -y iptables iproute2 procps vim
 
-RUN pip install -U pip --user && pip install requests lxml flask jinja2 gevent gunicorn --user --no-cache-dir  && apt clean && rm -rf /var/lib/apt/lists/* 
+RUN pip install -U pip --user && pip install requests lxml flask jinja2 gevent --user --no-cache-dir  && apt clean && rm -rf /var/lib/apt/lists/* 
 
 COPY weibo.py /opt/weibo/
 COPY config.py /opt/weibo/
-# 启动文件
-COPY run.sh /opt/weibo/
+
+RUN pip install gunicorn
 
 EXPOSE 5000
 
-ENTRYPOINT ["gunicorn", "-c", "/opt/weibo/config.py","--access-logfile - --error-logfile -", "weibo:app"]
+ENTRYPOINT ["gunicorn", "-c", "/opt/weibo/config.py","--access-logfile -", "--error-logfile -", "weibo:app"]
