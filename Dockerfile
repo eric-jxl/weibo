@@ -19,6 +19,7 @@ RUN pip install -U pip --user && pip install requests lxml flask jinja2 gevent g
 
 COPY weibo.py /opt/weibo/
 COPY config.py /opt/weibo/
+# 启动文件
 COPY run.sh /opt/weibo/
 
 EXPOSE 5000

@@ -1,4 +1,6 @@
 #!/bin/bash
-set -x
+set -eux
 
-gunicorn -c config.py --access-logfile - --error-logfile - weibo:app
+gunicorn_path=$(which gunicorn)
+
+$gunicorn_path -c config.py --access-logfile - --error-logfile - weibo:app
