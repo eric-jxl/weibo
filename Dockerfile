@@ -23,8 +23,6 @@ COPY weibo.py /opt/weibo/
 COPY config.py /opt/weibo/
 COPY run.sh /opt/weibo/
 
-RUN mkdir -p /opt/weibo/log && touch /opt/weibo/log/access.log && touch /opt/weibo/log/debug.log
-
 
 EXPOSE 5000
 ENTRYPOINT ["./run.sh"]
