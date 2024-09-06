@@ -1,5 +1,5 @@
 #!/bin/bash
-set -ex
+set -e
 
 if ! command -v gunicorn &> /dev/null
 then
