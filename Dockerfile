@@ -24,4 +24,4 @@ RUN pip install gunicorn
 
 EXPOSE 5000
 
-ENTRYPOINT ["gunicorn", "-c", "/opt/weibo/config.py","--access-logfile - --error-logfile -", "weibo:app"]
+ENTRYPOINT ["gunicorn", "-c", "/opt/weibo/config.py", "weibo:app"]
