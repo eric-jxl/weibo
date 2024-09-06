@@ -33,6 +33,16 @@ jobs:
         registry: ghcr.io
         username: ${{github.actor}}
         password: ${{secrets.GITHUB_TOKEN}}
+    
+    - name: Get Git commit hash
+      run: echo "GIT_COMMIT_SHA=${{ github.sha }}" >> $GITHUB_ENV
+      
+    - name: Tag Docker image with version
+      uses: docker/build-push-action@v3
+      with:
+        context: .
+        push: false
+        tags: ghcr.io/${{ github.repository }}:${{ env.GIT_COMMIT_SHA }}
       
     - name: 'Build and push with Buildx'
       uses: docker/build-push-action@v6
