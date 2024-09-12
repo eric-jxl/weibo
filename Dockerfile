@@ -23,5 +23,4 @@ COPY config.py /opt/weibo/
 
 
 EXPOSE 5000
-
 ENTRYPOINT ["gunicorn", "-c", "/opt/weibo/config.py", "--access-logfile", "-", "--error-logfile", "-", "weibo:app"]
