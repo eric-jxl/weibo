@@ -13,6 +13,7 @@ timeout = 30
 loglevel = 'info'
 daemon = False
 preload_app = True
+pidfile = '/var/run/gunicorn.pid'
 
 # 启动的进程数
 workers = multiprocessing.cpu_count()
