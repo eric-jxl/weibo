@@ -15,7 +15,7 @@ daemon = False
 preload_app = True
 pidfile = '/var/run/gunicorn.pid'
 
-# 启动的进程数
-workers = multiprocessing.cpu_count()
+
+workers = multiprocessing.cpu_count() # 启动的进程数
 worker_class = 'gevent'
 x_forwarded_for_header = 'X-FORWARDED-FOR'
