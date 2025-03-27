@@ -5,6 +5,7 @@ on:
     paths:  
       - "*.py"
       - "Dockerfile"
+  workflow_dispatch:
 
 jobs:
 
