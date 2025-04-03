@@ -62,7 +62,7 @@ def index() -> str:
 
 
 if __name__ == "__main__":
-    http_server = WSGIServer(("0.0.0.0", 5001), app)
+    http_server = WSGIServer(("0.0.0.0", 5000), app)
     signal.signal(signal.SIGINT, exit_gracefully)
     signal.signal(signal.SIGTERM, exit_gracefully)
     http_server.serve_forever()
