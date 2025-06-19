@@ -30,7 +30,9 @@ jobs:
         run: echo "GIT_COMMIT_SHA=${{ github.sha }}" >> $GITHUB_ENV
 
       - name: Get current date and time
-        run: echo "TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+        run: ｜ 
+          echo "TIMESTAMP=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_ENV
+          echo "PNAME=${GITHUB_REPOSITORY##*/}" >> $GITHUB_ENV
 
       - name: 'Login to GitHub Container Registry'
         uses: docker/login-action@v3
@@ -64,5 +66,5 @@ jobs:
           file: Dockerfile
           platforms: linux/amd64,linux/arm64
           tags: |
-            ${{ secrets.DOCKER_USERNAME }}/${{ github.repository }}:${{ env.TIMESTAMP }}
-            ${{ secrets.DOCKER_USERNAME }}/${{ github.repository }}:latest
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.PNAME }}:${{ env.TIMESTAMP }}
+            ${{ secrets.DOCKER_USERNAME }}/${{ env.PNAME }}:latest
