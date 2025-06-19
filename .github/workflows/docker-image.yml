@@ -70,8 +70,8 @@ jobs:
       with:
         context: .
         push: true
+        file: Dockerfile
         platforms: linux/amd64,linux/arm64
         tags: |
-          ${{ secrets.DOCKER_USERNAME }}:${{ env.GIT_COMMIT_SHA }}
           ${{ secrets.DOCKER_USERNAME }}:${{ env.TIMESTAMP }}
           ${{ secrets.DOCKER_USERNAME }}:latest
